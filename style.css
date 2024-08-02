@@ -1,0 +1,1201 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+body, html {
+    
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow-x: hidden;
+    /* font-family: "Oswald", sans-serif; */
+    font-family: "Poppins", sans-serif;
+    scroll-behavior: smooth;
+}
+
+html{
+    font-size: 10px;
+}
+
+.ocean-level {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+}
+
+#level1 {
+    margin-top: -300px;
+    overflow: hidden;
+    /* height: 320vh; */
+    height:auto;
+    background: linear-gradient(to bottom, #00bfff, #0073e6);
+}
+
+#level2 {
+    overflow: hidden;
+    background: linear-gradient(to bottom, #0073e6, #0059b3);
+    padding-top: 30px;
+}
+
+#level3 {
+    height: fit-content;
+    margin-bottom: 1px;
+    background: linear-gradient(to bottom, #0059b3, #003d80);
+}
+
+#level4 {
+    height: 50rem;
+    margin-top: -1px;
+    padding-top: 10px;
+    padding-left: 50px;
+    background: linear-gradient(to bottom, #003d80, #00264d);
+}
+#level5{
+   background: linear-gradient(to bottom, #00264d, #001429);
+   height: 320vh;
+}
+#level6{
+    background: linear-gradient(to bottom, #001429, #000000);  
+    height: 200vh;
+    position: relative;
+}
+
+.twinkle {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background: rgb(255, 255, 255);
+    border-radius: 50%;
+    opacity: 0;
+    animation: twinkle-animation 1.5s infinite ease-in-out;
+}
+
+
+@keyframes twinkle-animation {
+    0%, 100% { opacity: 0; }
+    50% { opacity: 1; }
+}
+
+
+/* ------------------- NAVBAR ------------------- */
+.navbar input[type="checkbox"],
+.navbar .hamburger-lines{
+    display: none;
+}
+
+.container{
+    max-width: 1200px;
+    width: 90%;
+    margin: 0;
+}
+
+.navbar{
+    box-shadow: 0px 5px 10px 0px #aaa;
+    position: fixed;
+    width: 100%;
+    background: #fff;
+    color: #000;
+    opacity: 0.85;
+    z-index: 100;
+}
+
+.navbar-container{
+    display: flex;
+    justify-content: space-between;
+    height: 75px;
+    align-items: center;
+}
+
+.menu-items{
+    margin: 0;
+    order: 2;
+    display: flex;
+}
+.logo{
+    order: 1;
+    font-size: 2.3rem;
+}
+
+.menu-items li{
+    list-style: none;
+    margin-left: 2.5rem;
+    font-size: 2.3rem;
+}
+
+.menu-items li:hover{
+    text-decoration: underline;
+    text-decoration-color: #117964;
+    text-decoration-thickness: .4rem;
+    cursor: pointer;
+    transition: .7s all ease-in-out;
+}
+
+.navbar a{
+    color: #444;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease-in-out;
+}
+
+.navbar a:hover{
+    color: #117964;
+}
+
+@media (max-width: 768px){
+    .navbar{
+        opacity: 0.95;
+    }
+
+    .navbar-container input[type="checkbox"],
+    .navbar-container .hamburger-lines{
+        display: block;
+    }
+
+    .navbar-container{
+        display: block;
+        position: relative;
+        height: 64px;
+    }
+
+    .navbar-container input[type="checkbox"]{
+        position: absolute;
+        display: block;
+        height: 32px;
+        width: 30px;
+        top: 20px;
+        left: 20px;
+        z-index: 5;
+        opacity: 0;
+        cursor: pointer;
+    }
+
+    .navbar-container .hamburger-lines{
+        display: block;
+        height: 28px;
+        width: 35px;
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .navbar-container .hamburger-lines .line{
+        display: block;
+        height: 4px;
+        width: 100%;
+        border-radius: 10px;
+        background: #333;
+    }
+    
+    .navbar-container .hamburger-lines .line1{
+        transform-origin: 0% 0%;
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .navbar-container .hamburger-lines .line2{
+        transition: transform 0.2s ease-in-out;
+    }
+
+    .navbar-container .hamburger-lines .line3{
+        transform-origin: 0% 100%;
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .navbar .menu-items{
+        padding-top: 100px;
+        background: #fff;
+        height: 100vh;
+        max-width: 300px;
+        transform: translate(-150%);
+        display: flex;
+        flex-direction: column;
+        margin-left: -40px;
+        padding-left: 40px;
+        transition: transform 0.5s ease-in-out;
+        box-shadow:  5px 0px 10px 0px #aaa;
+        overflow: scroll;
+    }
+
+    .navbar .menu-items li{
+        margin-bottom: 1.8rem;
+        font-size: 1.1rem;
+        font-weight: 500;
+    }
+
+    .logo{
+        position: absolute;
+        top: 10px;
+        right: 15px;
+        font-size: 2.5rem;
+    }
+
+    .navbar-container input[type="checkbox"]:checked ~ .menu-items{
+        transform: translateX(0);
+    }
+
+    .navbar-container input[type="checkbox"]:checked ~ .hamburger-lines .line1{
+        transform: rotate(45deg);
+    }
+
+    .navbar-container input[type="checkbox"]:checked ~ .hamburger-lines .line2{
+        transform: scaleY(0);
+    }
+
+    .navbar-container input[type="checkbox"]:checked ~ .hamburger-lines .line3{
+        transform: rotate(-45deg);
+    }
+
+}
+/*      RESPONSIVE   NAVBAR       */
+@media (max-width: 500px){
+    .navbar-container input[type="checkbox"]:checked ~ .logo{
+        display: none;
+    }
+    .twinkle {
+        width: 2px;
+        height: 2px;
+    }
+    :root{
+        font-size: 10px;
+    }
+
+}
+
+/* Hero Section */
+.hero-container {
+    font-family: "Poppins", sans-serif;
+    margin-top: 7.5rem;
+    background: linear-gradient(to right, #5DE0E6, #004aad);
+    width: 100%;
+    height:70rem; 
+    overflow: hidden;
+    position: relative;
+  }
+  
+  #hero-para {
+    position: relative;
+    top: 5.8rem;
+    left: 7.6rem;
+    width: 40rem;
+    font-weight: 400;
+    font-size: 1.7rem;
+
+  }
+  ::-webkit-scrollbar {
+    display: none;
+}
+  #hero-title {
+    position: relative;
+    top: 3.5rem;
+    left: 7rem;
+    line-height: 4rem;
+    font-size: 4.5rem;
+    color: #000000ad;
+  }
+  /*Float animation*/
+  @keyframes float {
+	0% {
+		transform: translatey(0px);
+	}
+	50% {
+		
+		transform: translatey(-20px);
+	}
+	100% {
+		
+		transform: translatey(0px);
+	}
+}
+  #hero-img{
+   position: absolute;
+   top: -25rem;
+   height: 70rem;
+   animation: float 6s ease-in-out infinite;
+  }
+  @media (max-width: 500px){
+    #hero-container{ 
+        padding: 2rem;
+    }
+    #hero-para{
+        left: 3rem;
+        font-size: 1.6rem;
+        width: 50%;
+        top:10.8rem;
+    }
+    #hero-title{
+    
+        top: 15.8rem;
+        left: 3rem;
+    }
+    
+
+    #hero-img{
+        position: relative;
+        top: 17rem;
+        left: 0;
+        width: 50rem;
+    }
+
+
+  }
+  #scroll{
+    position: absolute;
+    top:52rem;
+    right: 4.5rem;
+    width: 4%;
+    z-index: 1;
+  }
+  #iceberg-lower{
+    height: 90rem;
+    z-index: 1;
+    position: relative;
+    top: -8.7rem;
+    left: 39.2rem;
+    animation: float 6s ease-in-out infinite;
+  }
+
+  /*Junaid CSS*/
+
+  .dolphineImage{
+    position: absolute;
+    top: 1rem;
+    left: 3rem;
+    animation: wave-animation 2s ease-in-out infinite;
+
+}
+.SunlightZone{
+    font-family: "Poppins", sans-serif;
+  z-index: 2;
+  margin-left: 5rem;
+  margin-top: -67.5rem;
+}
+.dol{
+    position: absolute;
+    top: 0.8rem;
+    left: 0.1rem;
+}
+.SunlightZoneDefine{
+    height: 20rem;
+    width: 30%;
+    margin-left: 2rem;
+    font-size: 1.45rem;
+}
+
+.SunlightZone h1{
+    color: #000000a1;
+    font-size: 3rem;
+    text-decoration: underline;
+}
+
+.TurtleImage{
+    height: 20rem;
+    width: 30%;
+    margin-left: 2rem;
+    align-items: center;
+}
+.TurtleImage img{
+    padding-left: 5rem;
+    rotate: -15deg;
+    animation: wave-animation 2s ease-in-out infinite;
+}
+.TurtleSideText{
+    width: 20%;
+    position: absolute;
+    left: 25vw;
+    top: 75vh;
+    display: inline;
+    z-index: 8;
+    font-size: 1.45rem;
+}
+.TurtleBottomText{
+    width: 20%;
+    height: 15rem;
+    margin-left: 2rem;
+    font-size: 1.45rem;
+}
+@media (max-width: 500px){
+    .dolphineImage>img{
+        position: relative;
+        width: 20rem;
+        top: -1rem;
+        left: 2rem;
+    }
+    #iceberg-lower{
+        top:-2rem;
+        left: 13.5rem;
+        width: 23rem;
+        margin-bottom: 60rem;
+    }
+    
+}
+
+#majOverFiah{
+  display: inline;
+  animation: wave-animation 2s ease-in-out infinite;
+
+}
+#majOverNet{
+  display: inline;
+  animation: wave-animation 2s ease-in-out infinite;
+
+}
+#majOverOil{
+  display: inline;
+  animation: wave-animation 2s ease-in-out infinite;
+
+}
+.majorThreats{
+    position: relative;
+  display: flex;
+  justify-content: center;
+}
+.majorThreats img{
+    rotate: -6deg;
+    border: 4px solid white;
+    border-radius: 10px;
+    position: relative;
+    margin-right: -20px;
+    left: -20px;
+    margin-top: 40px;
+    margin-bottom: 50px;
+
+}
+.CommitToConserText{
+    font-family: "Poppins", sans-serif;
+    width: 55%;
+    margin-left: 40px;
+    font-size: 1.8rem;
+}
+.CommitToConserText>ol>li>h4{
+    margin: 15px 2px;
+}
+.CommitToConserText>ol>li{
+    margin: -4px -5px;
+   line-height: 25px;
+   color: white;
+}
+.icebergText{
+    position: absolute;
+    right: 100px;
+    font-size: 2.5rem;
+    top: 150px;
+    height: auto;
+    width: 20%;
+    z-index: 4;
+}
+
+.image-container {
+    position: relative;
+  }
+
+  
+  .image-text {
+    position: absolute;
+    padding: 2px 5px;
+    border-radius: 5px;
+    bottom: 0;
+    color: #00274d;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #7decf198;
+    rotate: -6deg;
+    margin-bottom: 65px;
+    font-weight: 800;
+    font-size: 1.9rem;
+  }
+  #narwhal{
+    -webkit-transform: scaleX(-1);
+    position: absolute;
+    width: 440px;
+    right: 30px;
+    border: 3.3px solid white;
+    border-radius: 15px;
+    top:1550px;
+  }
+
+  #donation-button {
+    background-color: #2835c5; 
+    /* background-color: #e79e21;  */
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #ffffff; /* white color */
+    cursor: pointer;
+    height: 80px;
+    width: 300px;
+    transition: background-color 0.3s ease;
+  }
+  
+  #donation-button:hover {
+    background-color: #0088ff; /* darker blue color */
+  }
+  
+  /* Add some sea-themed styles */
+  #donation-button {
+    background-size: 100% 100%;
+    border: 2px solid #ffffff; /* white border */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* add some depth */
+  }
+  
+  #donation-button:hover {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* add more depth on hover */
+  }
+    
+  @keyframes wave-animation {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-5px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  
+  #donation-button {
+    animation: wave-animation 2s ease-in-out infinite;
+  }
+
+#donation-button{
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+#donation-button a{
+    text-decoration: none;
+    color: white;
+}
+
+/* Twilight Zone */
+
+#Twilight-gb{
+    width: 100%;
+    position: absolute;
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    height: 100vh;
+    
+    
+}
+
+#Twilight-video{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: translate(-50%, -50%);
+    z-index: 5;
+    mix-blend-mode:soft-light;
+}
+#Twilight-container{
+    font-size: 1.4rem;
+    z-index: 6;
+    color: white;
+    padding-left: 10%;
+    padding-right: 10%;
+    
+    
+  p{
+    width: 65%;
+    font-size: 16px;
+    span{
+        font-size: larger;
+        font-weight: 600;
+    }
+  }
+}
+
+#JoinGroup{
+    z-index: 2;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding-left: 5%;
+    padding-right: 5%;
+    background: transparent;
+    color: white;
+    
+    .line{
+    text-decoration: underline;
+    }
+    p{
+        width: 60%;
+        font-size: 1.5rem;
+    }
+    img{
+        margin: 20px;
+        z-index: 4px;
+        border: 4px solid black;
+    }
+    button{
+        color: rgb(234, 248, 48);
+        border-radius: 5px;
+        font-size: 24px;
+        font-weight: 600;
+        background: #0285d2;
+        border: none;
+        padding: 5px 8px;
+        transition: .5s;
+        cursor: pointer;
+    }
+
+    button:hover{
+        scale: 105%;
+    }
+    h3{
+        font-size: 32px;
+        line-height: 16px;
+    }
+
+}
+
+#joinImageDiv{
+    padding: 50px;
+}
+
+#joinimage{
+    height: 300px;
+}
+
+
+@media (max-width: 768px){
+    
+    #JoinGroup{
+        flex-direction: column;
+        font-size:small
+
+    }
+
+    #Twilight-container{
+        padding-left: 5%;
+        padding-right: 5%;
+        p{
+            width: 100%;
+            font-size:small
+        
+        }
+    
+  }}
+
+
+  /*Midnight ZONE*/
+  #level4>h4{
+    text-decoration: underline;
+    color: white;
+    font-size: 3rem;
+    margin-bottom: 30px;
+}
+#level4>p{
+    color: white;
+    width: 52%;
+    text-align: center;
+    font-size: 1.7rem;
+}
+/* The flip box container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
+.flip-box-back>h2{
+    color: black;
+    text-decoration: underline;
+    font-size: 25px;
+}
+.flip-box-back>p{
+    padding: 20px;
+    font-size: 16px;
+    text-align: center;
+}
+.flip-box {
+    background-color: transparent;
+    width: 250px;
+    height: 250px;
+    /* border: 1px solid #f1f1f1; */
+    perspective: 1000px; /* Remove this if you don't want the 3D effect */
+  }
+  
+  /* This container is needed to position the front and back side */
+  .flip-box-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+  }
+  
+  /* Do an horizontal flip when you move the mouse over the flip box container */
+  .flip-box:hover .flip-box-inner {
+    transform: rotateY(180deg);
+  }
+  
+  /* Position the front and back side */
+  .flip-box-front, .flip-box-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
+  }
+  
+  /* Style the front side (fallback if image is missing) */
+  .flip-box-front {
+    background-color: #bbb;
+    color: black;
+  }
+  
+  /* Style the back side */
+  .flip-box-back {
+    background-color: dodgerblue;
+    color: white;
+    transform: rotateY(180deg);
+  }
+  #tripod{
+    position: absolute;
+    top: 150px;
+    right: 150px;
+  }
+  #vSquid{
+    position: absolute;
+    top: 220px;
+    right: 400px;
+  }
+  #glow{
+    animation:  glow-bio 5s infinite;
+  }
+  @keyframes glow-bio {
+    0%{
+        text-shadow: 0px 0px 0px yellow;
+        
+    }
+    50%{
+        text-shadow: 0px 0px 10px yellow;
+        
+    }
+    100%{
+        text-shadow: 0px 0px 0px yellow;
+    }
+  }
+
+  /*Abyss From Aman*/
+
+.padd{
+    padding: 2rem 5rem;
+}
+#abyss{
+    background: linear-gradient(180deg,#00274f,#00112a,#001327);
+    color: white;
+}
+
+/* abyss description */
+#abyss-desc{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 25rem;
+}
+
+#abyss-desc-head{
+    width: 70rem;
+    /* background-color: yellow; */
+}
+
+#abyss-desc-head h1{
+    font-size: 2.5rem;
+}
+
+#abyss-desc-head p{
+    font-size: 1.8rem;
+}
+#abyss-desc-img{
+    height: 100%;
+    width: 50rem;
+}
+#abyss-desc-img img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 1rem;
+}
+
+/* abyss threat section */
+#threat-head{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+#threat h2{
+    font-size: 2.5rem;
+}
+
+#threat p{
+    font-size: 1.8rem;
+}
+
+.threat-sub-head h3{
+    font-size: 2rem;
+}
+
+.threat-sub-head ul li{
+    font-size: 1.7rem;
+}
+.threat-sub-head ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    margin-top: 1.5rem;
+}
+
+/* abyss creature section */
+#creature{
+    height: fit-content;
+}
+#creature h2{
+    font-size: 2.5rem;
+}
+#creature-img-para{
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2.5rem;
+}
+
+.creature-img-para-div{
+    height: 35rem;
+    width: 22rem;
+    /* border: 2px solid black; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* padding: 10px; */
+    border-radius: 1rem;
+    cursor: pointer;
+}
+
+.creature-img-para-div-img{
+    /* border: 2px solid white; */
+    border-radius: 1rem;
+}
+
+.creature-img-para-div-img img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 1rem;
+}
+
+.creature-img-para-div-para{
+    padding: 1rem;
+    opacity: 0;
+    transition: 1s all ease-in-out;
+}
+
+.creature-img-para-div-para h4{
+    font-size: 2rem;
+}
+.creature-img-para-div-para p{
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+.creature-img-para-div:hover .creature-img-para-div-para{
+    opacity: 1;
+    transition: 1s all ease-in-out;
+}
+
+
+/* merchandise */
+#shop{
+    margin-top: 2rem;
+}
+#shop-tshirt{
+    width: 250rem;
+    display: flex;
+    gap: 8rem;
+    margin-top: 3rem;
+    /* border: 2px solid tomato; */
+}
+
+#about-shop h1{
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+#about-shop p{
+    font-size: 2rem;
+}
+
+.s-tshirt-div{
+    height: 30rem;
+    width: 25rem;
+    /* border: 2px solid black; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 1rem;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(45deg,#001429,#003d80);
+}
+
+.s-t-div-img{
+    /* background-color: rgb(208, 208, 208); */
+    border-radius: 1rem;
+    height: 90%;
+    width: 100%;
+}
+
+.s-t-div-img img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.s-t-div-para{
+    width: 100%;
+    border-radius: 1rem;
+    background-color: rgba(0, 0, 0, 0.471);
+    font-weight: 600;
+    text-align: center;
+    position: absolute;
+    bottom: 0rem;
+    transition: 1s all ease-in-out;
+}
+
+.s-t-div-para h5{
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+#s-tshirt-div9{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#s-tshirt-div9 button{
+    font-size: 2rem;
+    padding: 1rem 2rem;
+    border-radius: 2rem;
+    transition: .4s all ease-in;
+}
+
+.s-t-div-para p{
+    font-size: 1.5rem;
+    margin: .2rem;
+}
+.s-tshirt-div:hover .s-t-div-para{
+    bottom: 4rem;
+    transition: 1s all ease-in-out;
+}
+
+#s-tshirt-div9{
+    background: none;
+}
+
+#s-tshirt-div9 button:hover{
+    background-color: cyan;
+    padding: 1.5rem 2.2rem;
+    cursor: pointer;
+    transition: .4s all ease-in;
+}
+
+#s-tshirt-div9 i{
+    font-size: 7rem;
+}
+
+/* responsive for abyss */
+@media (max-width:998px) {
+    html{
+        font-size: 55%;
+    }
+    body{
+        overflow-x: hidden;
+    }
+}
+@media (max-width:768px) {
+    html{
+        font-size: 45%;
+    }
+    body{
+        overflow-x: hidden;
+    }
+    #abyss-desc{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #abyss-desc #abyss-desc-img{
+        margin: 1.5rem 0;
+    }
+
+    #threat{
+        margin: 2.8rem 0 0 0;
+    }
+
+    #threat-head{
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+    }
+    .threat-sub-head{
+        padding: 1rem 2rem 0 2rem;
+    }
+
+    #creature{
+        margin: 0px;
+    }
+
+    .creature-img-para-div-para p{
+        font-size: 1rem;
+    }
+    .creature-img-para-div {
+        height: 23rem;
+    }
+
+    #creature-img-para{
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+    
+    #shop{
+        margin: 0;
+    }
+}
+.floor{
+    margin-top: -490px;
+    font-family: "Poppins", sans-serif;
+    height: 170vh;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+  }
+  .text-floor>p{
+    width: 400px;
+    color: white;
+    font-size: 1.5rem;
+  }
+  .text-floor>h2{
+    color: white;
+    font-size: 2.5rem;
+  }
+  .text-floor{
+    margin-top: 140px;
+    margin-right: 50px;
+    text-align: center;
+    float: right;
+  }
+  #deepseadragonn {
+    p{
+        font-size: 16px;
+    }
+    position: absolute;
+    top: 380px;
+    left: 127px;
+    width: 300px;
+    z-index: 1;
+}
+  #seaStar {
+    position: absolute;
+    top: 545px;
+    left: 445px;
+    z-index: 10;
+    width: 300px;
+}
+#bloodBelly {
+    position: absolute;
+    top: 163px;
+    left: 256px;
+}
+  #oceanFloor{
+    position: absolute;
+    display: block;
+    width: 100%;
+    bottom: 0px;
+    clip-path: inset(0 0 35px 0); /*cropping for the footer*/
+  }
+  #deepseadragonn{
+    width: 300px;
+    height: 300px;
+    background: url("images/deepseadragonn.webp");
+    background-size: contain;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    overflow: hidden;
+}
+.text {
+    width: 100%;
+    background: linear-gradient(34deg, #0026ff, #00fff8, #00c9f8, #007cf8);
+    position: relative;
+    bottom: -50px;
+    opacity: 0;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 10px;
+    transition: 0.5s;
+}
+.card:hover .text{
+    opacity: 1;
+    bottom: 0px;
+    background-color: #ffffffbd;
+}
+#glassOctopus{
+    position: absolute;
+    top: 600px;
+    right: 400px;
+  }
+  #dumboOCt{
+    position: absolute;
+    top: 600px;
+    right: 800px;
+  }
+  #seaAngel{
+    position: absolute;
+    top: 600px;
+    right: 1200px;
+  }
+
+#quiz-div{
+    position: absolute;
+    top: 90rem;
+    left: 55rem;
+}
+
+#quiz-div button{
+    padding: 1.5rem 2.5rem;
+    font-size: 3.5rem;
+    border-radius: 2rem;
+    border: none;
+    background: #117964;
+}
+#quiz-div button a{
+    color: white;
+    text-decoration: none;
+}
+#quiz-div button:hover{
+    transition: .5s all ease-in-out;
+    background-color: #28d4b1;
+    cursor: pointer;
+}
+
+footer{
+    background-color: #000000;
+    color: white;
+    text-align: center;
+    font-size: 2rem;
+    padding: 0 0 2rem 0;
+}
+footer p{
+    margin: 0;
+}
